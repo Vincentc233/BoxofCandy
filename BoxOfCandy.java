@@ -12,14 +12,35 @@ public class BoxOfCandy
     * Precondition: col is a valid column index in box.
     */
     public boolean moveCandyToFirstRow(int col)
-    { return(false); }
+    {
+        if(box[0][col] != null ) return true;
+        for(int i = 1; i<box.length; i++){
+            if((box[i][col] != null)){
+                box[0][col] = box[i][col];
+                box[i][col] = null;
+            }
+            return true;
+        }
+        return false;
+    }
 
     /**
     * Removes from box and returns a piece of candy with flavor specified by the parameter, or
     * returns null if no such piece is found, as described in part (b)
     */
     public Candy removeNextByFlavor(String flavor)
-    {return(null);}
+    {
+        for(int row= box.length-1; row>=0; row--){
+            for(int col =0; col< box[0].length; col++){
+                Candy c = box[row][col];
+                if(c != null && c.getFlavor().equals(flavor)){
+                    box[row][col] = null;
+                    return c;
+                }
+            }
+        }
+        return null;
+    }
 
     public String toString(){
         String s= "";
