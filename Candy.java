@@ -14,25 +14,29 @@ public class Candy {
         Candy[][] box2 = new Candy[3][5];
         BoxOfCandy b2 = new BoxOfCandy(box2);
         box2[0][0] = new Candy("lime");
-        box2[0][1] = new Candy("orange");
-        box2[0][3] = new Candy("cherry");
-        box2[1][0] = new Candy("lemon");
-        box2[1][3] = new Candy("grape");
+        box2[0][1] = new Candy("lime");
+        box2[0][3] = new Candy("lemon");
+        box2[1][0] = new Candy("orange");
+        box2[1][3] = new Candy("lime");
         box2[1][4] = new Candy("lime");
-        box2[2][0] = new Candy("orange");
-        box2[2][2] = new Candy("cherry");
-        box2[0][4] = new Candy("lemon");
+        box2[2][0] = new Candy("cherry");
+        box2[2][2] = new Candy("lemon");
+        box2[2][4] = new Candy("orange");
         System.out.println(b2.removeNextByFlavor("cherry"));
+        //System.out.println(b2);
+        System.out.println(b2.removeNextByFlavor("lime"));
         System.out.println(b2);
+        //System.out.println(b2.removeNextByFlavor("grape"));
     }
     public Candy(String f){
         flavor = f;
     }
 
-    public String getFlavor() {return ;}
+    public String getFlavor() {return flavor;}
 
     public String toString(){
         return flavor;
     }
 
 }
+
